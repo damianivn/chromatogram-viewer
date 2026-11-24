@@ -1,5 +1,5 @@
 # Run from the application root with the isolated Qt build environment.
-from PyInstaller.utils.hooks import collect_data_files, collect_submodules
+from PyInstaller.utils.hooks import collect_submodules
 from pathlib import Path
 import os
 import sys
@@ -20,8 +20,10 @@ runtime_names = ['ffi.dll', 'libcrypto-3-x64.dll', 'liblzma.dll', 'LIBBZ2.dll',
 runtime_binaries = [(str(base_library / name), '.') for name in runtime_names
                     if (base_library / name).is_file()]
 
-a = Analysis(['desktop_entry.py'], pathex=['.'], binaries=runtime_binaries,
-    datas=collect_data_files('gcviewer', includes=['desktop/icons/*.svg']),
+packaging_dir = Path(SPECPATH)
+project_dir = packaging_dir.parent
+a = Analysis([str(packaging_dir / 'desktop_entry.py')], pathex=[str(project_dir)], binaries=runtime_binaries,
+    datas=[(str(project_dir / 'gcviewer/desktop/icons/*.svg'), 'gcviewer/desktop/icons')],
     hiddenimports=collect_submodules('rainbow'),
     hookspath=[], hooksconfig={'matplotlib': {'backends': ['QtAgg', 'Agg', 'pdf', 'svg']}},
     excludes=['streamlit', 'PyQt5', 'PyQt6', 'PySide2', 'tkinter'], noarchive=False)

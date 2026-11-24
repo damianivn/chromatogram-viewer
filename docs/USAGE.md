@@ -28,3 +28,14 @@ Click a sample in the left pane to see its chromatogram. Use the magnifying glas
 Select a GC-MS run and choose **Analysis > GC-MS inspection / EIC**. Select the MS function, then inspect a spectrum at one scan or average scans over a retention-time interval. To see where a particular ion elutes, enter its mass-to-charge ratio and click **Update preview**. The extracted ion chromatogram uses the nearest recorded mass channel.
 
 For a figure, use **Figure > Style** to set the publication size and **Figure > Axes** to adjust the plotted range. Choose **File > Export** to save the figure or its numerical data.
+
+## Build the portable Windows app
+
+After running setup, open Command Prompt in the repository root and run these commands.
+
+```bat
+.venv-qt\Scripts\python.exe -m pip install -r packaging\requirements-build.txt
+.venv-qt\Scripts\python.exe -m PyInstaller packaging\chromatogram-viewer.spec
+```
+
+The executable and its runtime files are in `dist/ChromatogramViewer/`. Copy the whole folder to the target PC. The [dependency lock file](../packaging/requirements-lock.txt) records the versions used for the v0.1.0 build.
