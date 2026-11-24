@@ -17,6 +17,6 @@ echo Ready. Double-click launch_qt.vbs to open Chromatogram Viewer.
 pause
 exit /b 0
 :failed
-echo Setup failed. Read the error above and docs\QT_PROTOTYPE.md.
+echo Setup failed. Read the error above and docs\USAGE.md.
 pause
 exit /b 1

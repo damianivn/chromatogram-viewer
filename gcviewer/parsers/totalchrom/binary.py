@@ -10,7 +10,7 @@ same encoding. Fields are read strictly in order; there is no offset table.
 * Timestamps: three 32-bit words: Unix time (UTC), then a packed local date
   and a packed local time. Only the Unix time is used.
 
-See FORMAT.md for how each rule was verified.
+See docs/TOTALCHROM_FORMAT.md for encoding and reference checks.
 """
 from __future__ import annotations
 

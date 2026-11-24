@@ -1,4 +1,4 @@
-"""Read TotalChrom PENX type-1 chromatograms. See docs/tcfid/FORMAT.md."""
+"""Read TotalChrom PENX type-1 chromatograms. See docs/TOTALCHROM_FORMAT.md."""
 from __future__ import annotations
 
 import hashlib

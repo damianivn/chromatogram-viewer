@@ -29,7 +29,7 @@ def report_failure(exc_type, exc, tb):
         log = folder / "qt-startup.log"
         with log.open("a", encoding="utf-8") as handle:
             handle.write(message + "\n")
-        detail = f"{exc_type.__name__}: {exc}\n\nDiagnostic log: {log}\nSee docs/QT_PROTOTYPE.md for setup and the debug command."
+        detail = f"{exc_type.__name__}: {exc}\n\nDiagnostic log: {log}\nSee docs/USAGE.md for setup and the debug command."
     except OSError:
         detail = message
     if sys.stderr is not None:

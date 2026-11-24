@@ -2,7 +2,7 @@
 
 NT is the rise between successive bunched points. AT is the running sum
 of heights above the starting point. Both thresholds use microvolts.
-See docs/tcfid/FORMAT.md for the field map and reference comparisons.
+See docs/TOTALCHROM_FORMAT.md for the field map and reference comparisons.
 """
 from __future__ import annotations
 
