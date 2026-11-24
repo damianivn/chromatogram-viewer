@@ -1,0 +1,3 @@
+# gcviewer is the Qt desktop application. Install into a project-local environment.
+# Keep one runtime dependency list for the existing Qt setup/build commands.
+-r requirements-qt.txt

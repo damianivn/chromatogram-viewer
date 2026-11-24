@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gcviewer"
+version = "0.1.0"
+description = "Chromatogram analysis, instrument readers, reports and Qt workspace"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.12"
+dependencies = ["numpy>=2.0,<3"]
+
+[project.optional-dependencies]
+ms = [
+    "scipy>=1.14,<2",
+    "rainbow-api @ https://github.com/damianivn/rainbow/archive/1d89e731ffaf1d36a963783c80961d51653e7076.zip#sha256=4ab73f1d3696dd30c9086549b6208228197bb12897527e2375a7d723cb3911dd",
+]
+spl = ["access-parser>=0.0.6,<1"]
+figures = ["matplotlib>=3.10,<4", "scipy>=1.14,<2"]
+reports = ["matplotlib>=3.10,<4"]
+excel = ["pandas>=2.2,<3", "openpyxl>=3.1,<4", "access-parser>=0.0.6,<1"]
+desktop = [
+    "PySide6>=6.8,<7", "matplotlib>=3.10,<4", "scipy>=1.14,<2",
+    "access-parser>=0.0.6,<1",
+    "rainbow-api @ https://github.com/damianivn/rainbow/archive/1d89e731ffaf1d36a963783c80961d51653e7076.zip#sha256=4ab73f1d3696dd30c9086549b6208228197bb12897527e2375a7d723cb3911dd",
+]
+dev = ["pypdf>=5,<7"]
+build = ["pyinstaller>=6.16,<7"]
+
+[project.gui-scripts]
+gcviewer = "gcviewer.desktop.__main__:main"
+
+[project.scripts]
+gcviewer-export-spl = "gcviewer.cli.export_spl:main"
+
+[tool.setuptools.packages.find]
+include = ["gcviewer*"]
+
+[tool.setuptools.package-data]
+"gcviewer.desktop" = ["icons/*.svg"]

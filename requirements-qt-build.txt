@@ -1,0 +1,4 @@
+-r requirements-qt.txt
+pyinstaller>=6.16,<7
+# PDF/vector verification used by the desktop regression checks.
+pypdf>=5,<7

@@ -1,0 +1,26 @@
+.venv/
+python/
+get-pip.py
+wheels/
+__pycache__/
+*.pyc
+.streamlit/
+.idea/
+.pytest_cache/
+/.venv-qt/
+/build/
+/dist/
+*.egg-info/
+# Local agent entry points and work records are not part of the published app.
+/AGENTS.md
+/.cursor/
+/agent-work/
+# Student handout stays local at the owner's request.
+/docs/ChromatogramViewer Student Guide.docx
+
+# Keep real instrument data and lab exports private.
+/tests/fixtures/spl/
+*.[Ss][Pp][Ll]
+*.[Rr][Aa][Ww]
+*.[Rr][Ss][Tt]
+*.xlsx
