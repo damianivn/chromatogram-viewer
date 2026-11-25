@@ -1,20 +1,20 @@
 # Chromatogram Viewer
 
-Chromatogram Viewer is a Windows desktop application for viewing and analyzing gas chromatography data. This was built for our analytical and instrumental analysis labs and reads raw data directly from PerkinElmer instrumentation including the Clarus GC-FID and GC-MS 2400, so students and instructors can review runs, examine peaks, and produce figures for presentations outside of the vendor software. Beyond viewing, it supports chromatogram analysis, figures formatted for publication, reports, and Excel exports.
+Chromatogram Viewer is a Windows desktop application for viewing and analyzing gas chromatography data. This was built for our analytical and instrumental analysis labs and reads raw data directly from PerkinElmer instrumentation including the Clarus GC-FID and GC-MS 2400. It supports chromatogram viewing, analysis, figures formatted for publication, reports, and Excel exports.
 
 ![Two synthetic chromatograms overlaid for comparison](docs/images/mixture-comparison.png)
 
 ## Run on Windows
 
-Chromatogram Viewer is distributed as a portable app for 64-bit Windows. There's no installer and no Python setup required.
+Chromatogram Viewer is distributed as a portable app for 64-bit Windows, to download:
 
 1. Go to the [latest release](https://github.com/damianivn/chromatogram-viewer/releases/tag/v0.1.0) and download `ChromatogramViewer-x.x.x-Windows-x64.zip` from the **Assets** section.
 2. Right-click the downloaded ZIP and choose Extract All.
 3. Open the extracted `ChromatogramViewer` folder and run `ChromatogramViewer.exe`.
 
->**Note:** The Windows build isn't signed, so Microsoft Defender SmartScreen may show a "Windows protected your PC" warning. Click **More info**, then **Run anyway**. This should only appear on the first launch.
+>**Note:** Microsoft Defender SmartScreen may show a "Windows protected your PC" warning. Click **More info**, then **Run anyway**. This should only appear on the first launch.
 
-Because the app is portable, you can keep the folder anywhere, including a USB drive or a shared lab computer and no internet access is required. To uninstall, just delete the folder.
+
 #### Running from source
 To run Chromatogram Viewer from source or contribute to development, you'll need [Python 3.12 or newer](https://www.python.org/downloads/) on Windows.
 
@@ -43,13 +43,9 @@ For a sequence of samples navigate to **File → Open → Sample library**, then
 
 ![Integration of a synthetic GC-FID mixture showing three peaks and their measured areas](docs/images/fid-integration.png)
 
-If the viewer flags detector clipping, treat that peak’s height and area as lower bounds. The [TotalChrom format notes](docs/TOTALCHROM_FORMAT.md) explain how the reader converts counts to microvolts and how the integration results compared with vendor reports.
+If the viewer flags detector clipping treat that peak’s height and area as lower bounds. The [TotalChrom format notes](docs/TOTALCHROM_FORMAT.md) explain how the reader converts counts to microvolts and how the integration results compared with vendor reports.
 
 Similarly to GC-MS, for a sequence of samples navigate to **File → Open → Sample library**, ensure the directory is set to search for "GC-FID .raw files" and select a folder containing the .raw files, then (optionally) select a .spl sample list to filter and assign sample list data.
-
-## Compare samples and export figures
-
-Open two or more acquisitions and choose **Analysis → Compare samples**. Overlay traces to compare retention times, or stack them to see individual peak shapes. Under **Figure → Style**, choose the dimensions for your figure. Use **File → Export** to save it as PDF, SVG, PNG, or TIFF.
 
 The [usage guide](docs/USAGE.md) covers workspace navigation, reusable FID methods, component naming, and numerical exports.
 
